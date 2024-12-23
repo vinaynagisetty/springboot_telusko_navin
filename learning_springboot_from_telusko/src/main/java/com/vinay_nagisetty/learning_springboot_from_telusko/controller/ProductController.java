@@ -26,5 +26,10 @@ public class ProductController {
          products.addProduct(product);
          return "Product Added Successfully!";
     }
+    @PutMapping("/product")
+    public String updateProduct(@RequestBody Product product) {
+        products.updateProduct(product);
+        return "Product Updated Successfully!";
+    }
 
 }
