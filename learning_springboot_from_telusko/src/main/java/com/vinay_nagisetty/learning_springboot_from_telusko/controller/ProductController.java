@@ -31,5 +31,10 @@ public class ProductController {
         products.updateProduct(product);
         return "Product Updated Successfully!";
     }
+    @DeleteMapping("/product/{id}")
+    public String deleteProduct(@PathVariable int id) {
+        products.deleteProduct(id);
+        return "Product Deleted Successfully!";
+    }
 
 }
