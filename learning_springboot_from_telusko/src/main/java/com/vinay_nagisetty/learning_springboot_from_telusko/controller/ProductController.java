@@ -3,10 +3,7 @@ package com.vinay_nagisetty.learning_springboot_from_telusko.controller;
 import com.vinay_nagisetty.learning_springboot_from_telusko.model.Product;
 import com.vinay_nagisetty.learning_springboot_from_telusko.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,11 @@ public class ProductController {
     @GetMapping("/product/{id}")
     public Product getProductById(@PathVariable int id) {
         return products.getProductById(id);
+    }
+    @PostMapping("/product")
+    public String addProduct( @RequestBody Product product) {
+         products.addProduct(product);
+         return "Product Added Successfully!";
     }
 
 }
