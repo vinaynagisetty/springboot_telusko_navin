@@ -17,21 +17,21 @@ public class ProductController {
     public List<Product> getProducts() {
         return products.getProducts();
     }
-    @GetMapping("/product/{id}")
+    @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable int id) {
         return products.getProductById(id);
     }
-    @PostMapping("/product")
+    @PostMapping("/products")
     public String addProduct( @RequestBody Product product) {
          products.addProduct(product);
          return "Product Added Successfully!";
     }
-    @PutMapping("/product")
+    @PutMapping("/products")
     public String updateProduct(@RequestBody Product product) {
         products.updateProduct(product);
         return "Product Updated Successfully!";
     }
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping("/products/{id}")
     public String deleteProduct(@PathVariable int id) {
         products.deleteProduct(id);
         return "Product Deleted Successfully!";

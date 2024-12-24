@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/learning_springboot_from_telusko.iml" filepath="$PROJECT_DIR$/.idea/learning_springboot_from_telusko.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learning_springboot_from_telusko/learning_springboot_from_telusko.iml" filepath="$PROJECT_DIR$/learning_springboot_from_telusko/learning_springboot_from_telusko.iml" />
     </modules>
   </component>
 </project>
