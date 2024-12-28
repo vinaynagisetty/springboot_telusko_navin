@@ -2,7 +2,10 @@ package com.vinay_nagisetty.learning_springboot_from_telusko.controller;
 
 import com.vinay_nagisetty.learning_springboot_from_telusko.model.Product;
 import com.vinay_nagisetty.learning_springboot_from_telusko.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,9 +25,9 @@ public class ProductController {
         return products.getProductById(id);
     }
     @PostMapping("/products")
-    public String addProduct( @RequestBody Product product) {
-         products.addProduct(product);
-         return "Product Added Successfully!";
+    public ResponseEntity<String> addProduct(@Valid @RequestBody Product product) {
+        products.addProduct(product);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Product Added Successfully!");
     }
     @PutMapping("/products")
     public String updateProduct(@RequestBody Product product) {
